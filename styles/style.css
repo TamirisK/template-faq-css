@@ -1,0 +1,131 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section.faq{
+  min-height: 100vh;
+  display: flex;
+  background-color: red;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
+}
+
+.faq__container{
+  max-width: 600px;
+  margin: 0px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.faq__container h1{
+  color: #333;
+}
+
+.faq__container .tab{
+  padding: 0px 20px 20px;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.faq__container .tab input{
+  appearance: none;
+}
+
+.faq__container .tab label{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq__container .tab label::after{
+  content: '+';
+  position: absolute;
+  right: 20px;
+  font-size: 2rem;
+  color: rgba(0, 0, 0, 0.1);
+  transition: transform 1s;
+}
+
+.faq__container .tab:hover label::after{
+  color: #333;
+}
+
+.faq__container .tab input:checked ~ label::after{
+  transform: rotate(135deg);
+}
+
+.faq__container .tab label h2{
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #333;
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.faq__container .tab label h3{
+  position: relative;
+  font-weight: 500;
+  color: #333;
+  z-index: 10;
+}
+
+.faq__container .tab .content{
+  max-height: 0;
+  transition: 1s;
+  overflow: hidden;
+}
+
+.faq__container .tab input:checked ~ .content{
+  max-height: 100vh;
+}
+
+.faq__container .tab .content p{
+  padding: 10px 0;
+  position: relative;
+  color: #333;
+  z-index: 10;
+}
+
+/* decoration */
+
+.faq__container .tab1 label h2{
+  background-color: rgb(58, 148, 148);
+}
+
+.faq__container .tab2 label h2{
+  background-color: rgb(105, 97, 207);
+}
+
+.faq__container .tab input:checked ~ label h2{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  justify-content: flex-end;
+  align-items: end;
+  font-size: 5rem;
+  color: rgba(255, 255, 255, 0.2);
+  padding: 10px 20px;
+}
+
+.faq__container .tab input:checked ~ label h3{
+  /* background-color: #fff; */
+  /* padding: 5px 10px; */
+  width: 95%;
+  padding-bottom: 5px;
+  border-radius: 2px;
+  border-bottom: 1px solid #333;
+}
